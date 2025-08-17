@@ -23,6 +23,14 @@ function filtrarPorPrecio(alojamientos, precioMaximo) {
   });
 }
 
+function incluyeCaracteristicas(alojamiento, caracDeseadas) {
+  return caracDeseadas.every((a) => {return alojamiento.caracteristicas.includes(a)})
+}
+
+function filtrarPorCaracteristicas(alojamientos, caracDeseadas) {
+  return alojamientos.filter((a) => {return incluyeCaracteristicas(a, caracDeseadas)})
+}
+
 function obtenerTotalReservas(reservas) {
   return reservas.reduce((previo, reserva) => {
     return previo + reserva.precioFinal();
@@ -33,5 +41,7 @@ module.exports = {
   aumentarPrecioDiario,
   alojamientoMasCaro,
   filtrarPorPrecio,
+  incluyeCaracteristicas,
+  filtrarPorCaracteristicas,
   obtenerTotalReservas,
 };

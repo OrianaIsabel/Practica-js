@@ -6,11 +6,12 @@ const Categoria = Object.freeze({
 })
 
 class Alojamiento {
-    constructor(nombre, precioPorNoche, categoria) {
+    constructor(nombre, precioPorNoche, categoria, caracteristicas) {
         this.nombre = nombre
         this.precioPorNoche = precioPorNoche
         this.categoria = categoria
         this.reservas = []
+        this.caracteristicas = caracteristicas
     }
 
     getDescripcion() {
